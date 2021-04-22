@@ -2,10 +2,10 @@ package school.cactus.cactusnotesmvvmsample
 
 class UsernameValidator {
     fun validate(username: String?) = when {
-        username == null -> "Username cannot be empty"
-        username.isBlank() -> "Username cannot be empty"
-        username.length < 3 -> "Username cannot be this short"
-        !username.containsValidCharacters() -> "Username can only include lowercase, digit and _ character"
+        username == null ->  getString(R.string.error_msg_1)
+        username.isBlank() -> getString(R.string.error_msg_1)
+        username.length < 3 -> getString(R.string.error_msg_2)
+        !username.containsValidCharacters() -> getString(R.string.error_msg_3)
         else -> null
     }
 

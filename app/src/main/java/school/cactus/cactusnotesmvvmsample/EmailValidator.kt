@@ -2,11 +2,11 @@ package school.cactus.cactusnotesmvvmsample
 
 class EmailValidator {
     fun validate(email: String?) = when {
-        email == null -> "Email cannot be empty"
-        email.isBlank() -> "Email cannot be empty"
-        email.length < 5 -> "Email cannot be this short"
+        email == null -> getString(R.string.email_error_msg_1)
+        email.isBlank() -> getString(R.string.email_error_msg_1)
+        email.length < 5 -> getString(R.string.email_error_msg_2)
         !email.contains("@")
-                || !email.contains(".") -> "Invalid email"
+                || !email.contains(".") -> getString(R.string.email_error_msg_3)
         else -> null
     }
 }
