@@ -14,4 +14,5 @@
     <string name="error_username_length">Username cannot be this short</string>
     <string name="error_username_invalid">Username can only include lowercase, digit and _ character</string>
     <string name="already_have_an_account">Already have an account?</string>
+
 </resources>

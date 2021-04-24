@@ -1,7 +1,7 @@
 package school.cactus.cactusnotesmvvmsample
 
 import android.content.Context
-import android.view.View
+import android.content.res.Resources
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -20,9 +20,11 @@ class SignupViewModel(private val context: Context) : ViewModel() {
     private val passwordValidator = PasswordValidator()
 
     fun onSignupButtonClick() {
-        emailError.value = context.getString(emailValidator.validate(email.value))
-        usernameError.value = context.getString(usernameValidator.validate(username.value))
-        passwordError.value = context.getString(passwordValidator.validate(password.value))
+
+
+        emailError.value = try { context.getString(emailValidator.validate(email.value)) } catch (e: Resources.NotFoundException) { null }
+        usernameError.value = try { context.getString(usernameValidator.validate(username.value))} catch (e: Resources.NotFoundException) { null }
+        passwordError.value = try { context.getString(passwordValidator.validate(password.value)) } catch (e: Resources.NotFoundException) { null }
     }
 
 }
