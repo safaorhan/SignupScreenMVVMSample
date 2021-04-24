@@ -2,11 +2,11 @@ package school.cactus.cactusnotesmvvmsample
 
 class PasswordValidator {
     fun validate(password: String?) = when {
-        password == null -> getString(R.string.error_password_blank)
-        password.isBlank() -> getString(R.string.error_password_blank)
-        password.length < 8 -> getString(R.string.error_password_length)
-        !password.containsRequiredCharacters() -> getString(R.string.error_password_invalid)
-        else -> null
+        password == null -> R.string.error_password_blank
+        password.isBlank() -> R.string.error_password_blank
+        password.length < 8 -> R.string.error_password_length
+        !password.containsRequiredCharacters() -> R.string.error_password_invalid
+        else -> 0
     }
 
     private fun String.containsRequiredCharacters() = containsDigit()

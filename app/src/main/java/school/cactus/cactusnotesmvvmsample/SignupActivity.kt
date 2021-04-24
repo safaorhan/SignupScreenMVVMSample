@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import school.cactus.cactusnotesmvvmsample.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
-    private val viewModel: SignupViewModel by viewModels()
+    private val viewModel: SignupViewModel by viewModels { SignupViewModelFactory(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
