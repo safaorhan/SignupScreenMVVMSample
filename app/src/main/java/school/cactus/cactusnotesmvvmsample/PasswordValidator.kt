@@ -1,13 +1,15 @@
 package school.cactus.cactusnotesmvvmsample
 
+import android.content.Context
 import android.content.res.Resources
 
 class PasswordValidator {
+
     fun validate(password: String?) = when {
-        password == null -> Resources.getSystem().getString(R.string.password_error_msg_1)
-        password.isBlank() -> Resources.getSystem().getString(R.string.password_error_msg_1)
-        password.length < 8 -> Resources.getSystem().getString(R.string.password_error_msg_2)
-        !password.containsRequiredCharacters() -> Resources.getSystem().getString(R.string.password_error_msg_3)
+        password == null -> R.string.password_error_msg_1
+        password.isBlank() -> R.string.password_error_msg_1
+        password.length < 8 -> R.string.password_error_msg_2
+        !password.containsRequiredCharacters() -> R.string.password_error_msg_3
         else -> null
     }
 
