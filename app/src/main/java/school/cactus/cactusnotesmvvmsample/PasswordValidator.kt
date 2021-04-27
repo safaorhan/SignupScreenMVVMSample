@@ -1,11 +1,14 @@
 package school.cactus.cactusnotesmvvmsample
 
-class PasswordValidator {
+import android.content.Context
+
+class PasswordValidator(var applicationContext: Context) {
+
     fun validate(password: String?) = when {
-        password == null -> "Password cannot be empty"
-        password.isBlank() -> "Password cannot be empty"
-        password.length < 8 -> "Password cannot be this short"
-        !password.containsRequiredCharacters() -> "Password should contain one lowercase, one uppercase, one digit, one spec char"
+        password == null -> applicationContext.getString(R.string.password_cannot_empty)
+        password.isBlank() -> applicationContext.getString(R.string.password_cannot_empty)
+        password.length < 8 -> applicationContext.getString(R.string.password_cannot_be_short)
+        !password.containsRequiredCharacters() -> applicationContext.getString(R.string.password_invalid)
         else -> null
     }
 

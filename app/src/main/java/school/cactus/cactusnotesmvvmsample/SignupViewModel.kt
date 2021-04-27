@@ -1,9 +1,15 @@
 package school.cactus.cactusnotesmvvmsample
 
+import android.app.Application
+import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import java.lang.ref.WeakReference
 
-class SignupViewModel : ViewModel() {
+
+class SignupViewModel(application: Application) : AndroidViewModel(application) {
+    private var applicationContext = application.applicationContext
+
     // State
     val email = MutableLiveData<String>()
     val username = MutableLiveData<String>()
@@ -13,9 +19,9 @@ class SignupViewModel : ViewModel() {
     val passwordError = MutableLiveData<String>()
 
 
-    private val emailValidator = EmailValidator()
-    private val usernameValidator = UsernameValidator()
-    private val passwordValidator = PasswordValidator()
+    private val emailValidator = EmailValidator(applicationContext)
+    private val usernameValidator = UsernameValidator(applicationContext)
+    private val passwordValidator = PasswordValidator(applicationContext)
 
     fun onSignupButtonClick() {
         emailError.value = emailValidator.validate(email.value)

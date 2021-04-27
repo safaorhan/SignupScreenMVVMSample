@@ -4,5 +4,14 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign up</string>
+    <string name="username_cannot_be_empty">"Username cannot be empty"</string>
+    <string name="username_cannot_be_short">"Username cannot be this short"</string>
+    <string name="username_invalid">"Username can only include lowercase, digit and _ character"</string>
+    <string name="email_invalid"> "Invalid email"</string>
+    <string name="email_cannot_be_empty">"Email cannot be empty"</string>
+    <string name="email_cannot_be_short">"Email cannot be this short"</string>
+    <string name="password_cannot_empty">"Password cannot be empty"</string>
+    <string name="password_cannot_be_short">"Password cannot be this short"</string>
+    <string name="password_invalid">"Password should contain one lowercase, one uppercase, one digit, one spec char"</string>
     <string name="already_have_an_account">Already have an account?</string>
 </resources>
