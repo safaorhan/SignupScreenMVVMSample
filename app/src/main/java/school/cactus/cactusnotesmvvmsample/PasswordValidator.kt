@@ -2,11 +2,11 @@ package school.cactus.cactusnotesmvvmsample
 
 class PasswordValidator {
     fun validate(password: String?) = when {
-        password == null -> "Password cannot be empty"
-        password.isBlank() -> "Password cannot be empty"
-        password.length < 8 -> "Password cannot be this short"
-        !password.containsRequiredCharacters() -> "Password should contain one lowercase, one uppercase, one digit, one spec char"
-        else -> null
+        password == null -> R.string.error_password_blank
+        password.isBlank() -> R.string.error_password_blank
+        password.length < 8 -> R.string.error_password_length
+        !password.containsRequiredCharacters() -> R.string.error_password_invalid
+        else -> 0
     }
 
     private fun String.containsRequiredCharacters() = containsDigit()

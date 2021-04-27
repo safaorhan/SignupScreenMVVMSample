@@ -4,5 +4,15 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign up</string>
+    <string name="error_email_blank">Email cannot be empty</string>
+    <string name="error_email_length">Email cannot be this short</string>
+    <string name="error_email_invalid">Invalid email</string>
+    <string name="error_password_blank">Password cannot be empty</string>
+    <string name="error_password_length">Password cannot be this short</string>
+    <string name="error_password_invalid">Password should contain one lowercase, one uppercase, one digit, one spec char</string>
+    <string name="error_username_blank">Username cannot be empty</string>
+    <string name="error_username_length">Username cannot be this short</string>
+    <string name="error_username_invalid">Username can only include lowercase, digit and _ character</string>
     <string name="already_have_an_account">Already have an account?</string>
+
 </resources>
