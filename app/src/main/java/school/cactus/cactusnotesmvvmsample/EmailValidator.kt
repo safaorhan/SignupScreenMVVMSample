@@ -1,16 +1,15 @@
 package school.cactus.cactusnotesmvvmsample
 
 import android.content.Context
-import android.content.res.Resources
 
-class EmailValidator{
+class EmailValidator(var context: Context){
 
     fun validate(email: String?) = when {
-        email == null -> R.string.email_error_msg_1
-        email.isBlank() -> R.string.email_error_msg_1
-        email.length < 5 -> R.string.email_error_msg_2
+        email == null -> context.getString(R.string.email_cannot_be_empty)
+        email.isBlank() -> context.getString(R.string.email_cannot_be_empty)
+        email.length < 5 -> context.getString(R.string.email_cannot_be_short)
         !email.contains("@")
-                || !email.contains(".") -> R.string.email_error_msg_3
+                || !email.contains(".") -> context.getString(R.string.email_invalid)
         else -> null
     }
 }

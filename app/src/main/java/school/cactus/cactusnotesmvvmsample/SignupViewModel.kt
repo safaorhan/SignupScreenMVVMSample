@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 
 
 class SignupViewModel(application: Application) : AndroidViewModel(application) {
-    private val context = getApplication<Application>().applicationContext
+    private val context = application.applicationContext
     // State
     val email = MutableLiveData<String>()
     val username = MutableLiveData<String>()
@@ -18,13 +18,13 @@ class SignupViewModel(application: Application) : AndroidViewModel(application) 
     val passwordError = MutableLiveData<String>()
 
 
-    private val emailValidator = EmailValidator()
-    private val usernameValidator = UsernameValidator()
-    private val passwordValidator = PasswordValidator()
+    private val emailValidator = EmailValidator(context)
+    private val usernameValidator = UsernameValidator(context)
+    private val passwordValidator = PasswordValidator(context)
 
     fun onSignupButtonClick() {
-        emailError.value = context.getString(emailValidator.validate(email.value)!!)
-        usernameError.value = context.getString(usernameValidator.validate(username.value)!!)
-        passwordError.value = context.getString(passwordValidator.validate(password.value)!!)
+        emailError.value = emailValidator.validate(email.value)
+        usernameError.value = usernameValidator.validate(username.value)
+        passwordError.value = passwordValidator.validate(password.value)
     }
 }

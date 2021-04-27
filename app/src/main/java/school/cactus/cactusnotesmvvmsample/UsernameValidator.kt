@@ -1,15 +1,14 @@
 package school.cactus.cactusnotesmvvmsample
 
 import android.content.Context
-import android.content.res.Resources
 
-class UsernameValidator {
+class UsernameValidator(var context: Context) {
 
     fun validate(username: String?) = when {
-        username == null -> R.string.error_msg_1
-        username.isBlank() -> R.string.error_msg_1
-        username.length < 3 -> R.string.error_msg_2
-        !username.containsValidCharacters() -> R.string.error_msg_3
+        username == null -> context.getString(R.string.username_cannot_be_empty)
+        username.isBlank() -> context.getString(R.string.username_cannot_be_empty)
+        username.length < 3 -> context.getString(R.string.username_cannot_be_short)
+        !username.containsValidCharacters() -> context.getString(R.string.username_invalid)
         else -> null
     }
 
