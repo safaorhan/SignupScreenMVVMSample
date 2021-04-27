@@ -1,6 +1,5 @@
 package school.cactus.cactusnotesmvvmsample
 
-import android.view.View
 import androidx.databinding.BindingAdapter
 import com.google.android.material.textfield.TextInputLayout
 

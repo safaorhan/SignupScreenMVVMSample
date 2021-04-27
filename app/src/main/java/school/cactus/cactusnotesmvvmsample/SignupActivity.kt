@@ -18,9 +18,5 @@ class SignupActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-
-        viewModel.email.observe(this) {
-            Log.e("Signup", it)
-        }
     }
 }
